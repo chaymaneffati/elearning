@@ -1,0 +1,146 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>DataTables</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+           
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="login">username :</label>
+                            <input type="text" name="login" id="login" formControlName="login" class="form-control">
+                            <div *ngIf="login.touched && login.invalid">
+                                <small *ngIf="login.errors.required" class="text-danger">username is required<br></small>
+                                <small *ngIf="login.errors.pattern" class="text-danger">Invalid username<br></small>
+                                <small *ngIf="login.errors.minlength" class="text-danger">username must contain two characters at least</small>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group col-6">
+                            <label for="name">Firstname :</label>
+                            <input type="text" name="name" id="name" formControlName="name" class="form-control">
+                            <div *ngIf="name.touched && name.invalid">
+                                <small *ngIf="name.errors.required" class="text-danger">Firstname is required<br></small>
+                                <small *ngIf="name.errors.pattern" class="text-danger">Invalid Firstname<br></small>
+                                <small *ngIf="name.errors.minlength" class="text-danger">Firstname must contain two characters at least</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="lastname">Lastname :</label>
+                            <input type="text" name="lastname" id="lastname" formControlName="lastname" class="form-control">
+                            <div *ngIf="lastname.touched && lastname.invalid">
+                                <small *ngIf="lastname.errors.required" class="text-danger">Lastname is required<br></small>
+                                <small *ngIf="lastname.errors.pattern" class="text-danger">Invalid Lastname<br></small>
+                                <small *ngIf="lastname.errors.minlength" class="text-danger">Lastname must contain two characters at least</small>
+                            </div>
+                        </div>
+                    
+            
+                    
+                        <div class="form-group col-6">
+                            <label for="phone">Phone :</label>
+                            <input type="text" name="phone" id="phone" formControlName="phone" class="form-control">
+                            <div *ngIf="phone.touched && phone.invalid">
+                                <small *ngIf="phone.errors.required" class="text-danger">Phone is required<br></small>
+                                <small *ngIf="phone.errors.pattern" class="text-danger">Invalid Phone<br></small>
+                                <small *ngIf="phone.errors.minlength" class="text-danger">Phone must contain 8 characters at least</small>
+                                <small *ngIf="phone.errors.maxlength" class="text-danger">Phone must contain a maximum of 13 characters</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="email">email :</label>
+                            <input type="text" name="email" id="email" formControlName="email" class="form-control">
+                            <div *ngIf="email.touched && email.invalid">
+                                <small *ngIf="email.errors.required" class="text-danger">email is required<br></small>
+                                <small *ngIf="email.errors.pattern" class="text-danger">Invalid email<br></small>
+                                <small *ngIf="email.errors.minlength" class="text-danger">email must contain two characters at least</small>
+                            </div>
+                        </div>
+                    
+                
+                    
+                        <div class="form-group col-6">
+                            <label for="Role"> role:</label>
+                            <input list="browsers" type="text" name="Role" id="email" formControlName="Role" class="form-control">
+                            <datalist id="browsers">
+                                <option value="student">
+                                <option value="professor">
+            
+                              </datalist>
+                            <div *ngIf="Role.touched && Role.invalid">
+                                <small *ngIf="Role.errors.required" class="text-danger">role is required<br></small>
+                                <small *ngIf="Role.errors.pattern" class="text-danger">Invalid role<br></small>
+                                <small *ngIf="Role.errors.minlength" class="text-danger">role must contain two characters at least</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="adress">adresse :</label>
+                            <input type="text" name="adress" id="lastname" formControlName="adress" class="form-control">
+                            <div *ngIf="adress.touched && adress.invalid">
+                                <small *ngIf="adress.errors.required" class="text-danger">Lastname is required<br></small>
+                                 </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="password">password :</label>
+                            <input type="text" name="email" id="password" formControlName="password" class="form-control">
+                            <div *ngIf="password.touched && password.invalid">
+                                <small *ngIf="password.errors.required" class="text-danger">password is required<br></small>
+                              
+                                <small *ngIf="password.errors.minlength" class="text-danger">password must contain two characters at least</small>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input type="hidden" formControlName="id" name="id">
+                            <input type="submit" value="update user" [disabled]="updateUserForm.invalid" class="btn btn-warning">
+                        </div>
+                    </div>
+             
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>!

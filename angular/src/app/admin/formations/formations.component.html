@@ -1,0 +1,71 @@
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>DataTables</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">DataTables</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+  
+  
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Liste des  formateurs</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <button class="btn btn-primary"  [routerLink]="['/addformations' ]" >Ajouter</button>
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>Titre</th>
+                      <th>Description</th>
+                      <th>date</th>
+                      <th>duree</th>
+                      <th>Categorie</th>
+                      <th colspan="2">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let formation of Formations" >
+                        <th>{{formation.id }}</th>
+                        <td>{{formation.titre }}</td>
+                        <td>{{formation.description }}</td>
+                        <td>{{formation.date }}</td>
+                        <td>{{formation.duree }}</td>
+                        <td>{{formation.nom }}</td>
+                        <td><button class="btn btn-danger mx-3" (click)="deleteFormation(formation.id)">Delete</button><br></td>
+                       <td> <button class="btn btn-warning"  [routerLink]="['/editformations',formation.id ]" >update</button></td>
+  
+                    </tr>
+                    </tbody>
+  
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+  

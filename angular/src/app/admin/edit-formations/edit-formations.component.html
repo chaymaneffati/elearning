@@ -1,0 +1,98 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>DataTables</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">DataTables</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+  
+  
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <form [formGroup]="updateFormationForm" (ngSubmit)="editFormation()">
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="titre">Titre :</label>
+                            <input type="text" name="titre" id="titre" formControlName="titre" class="form-control">
+                            <div *ngIf="titre.touched && titre.invalid">
+                                <small *ngIf="titre.errors.required" class="text-danger">username is required<br></small>
+                                <small *ngIf="titre.errors.pattern" class="text-danger">Invalid username<br></small>
+                                <small *ngIf="titre.errors.minlength" class="text-danger">username must contain two characters at least</small>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="description">Description :</label>
+                            <input type="text" name="description" id="description" formControlName="description" class="form-control">
+                            <div *ngIf="description.touched && description.invalid">
+                                <small *ngIf="description.errors.required" class="text-danger">username is required<br></small>
+                                <small *ngIf="description.errors.pattern" class="text-danger">Invalid username<br></small>
+                                <small *ngIf="description.errors.minlength" class="text-danger">username must contain two characters at least</small>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="date">Date :</label>
+                            <input type="date" name="date" id="date" formControlName="date" class="form-control">
+                            <div *ngIf="date.touched && date.invalid">
+                                <small *ngIf="date.errors.required" class="text-danger">username is required<br></small>
+                                <small *ngIf="date.errors.pattern" class="text-danger">Invalid username<br></small>
+                                <small *ngIf="date.errors.minlength" class="text-danger">username must contain two characters at least</small>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="duree">Duree :</label>
+                            <input type="text" name="duree" id="duree" formControlName="duree" class="form-control">
+                            <div *ngIf="duree.touched && duree.invalid">
+                                <small *ngIf="duree.errors.required" class="text-danger">username is required<br></small>
+                                <small *ngIf="duree.errors.pattern" class="text-danger">Invalid username<br></small>
+                                <small *ngIf="duree.errors.minlength" class="text-danger">username must contain two characters at least</small>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="categorie">Categorie :</label>
+                            <select name="id_categorie" id="id_categorie" formControlName="id_categorie">
+                                <option *ngFor="let categorie of categories" value="{{categorie.id}}">{{categorie.titre}}</option>
+                            </select>                            
+                        </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input type="hidden" formControlName="id" name="id">
+                            <input type="submit" value="Ajouter">
+                        </div>
+                    </div>
+  
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  
