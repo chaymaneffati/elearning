@@ -17,7 +17,7 @@ export class CourService {
   private getOneUserUrl = "http://localhost/api/getonecour.php?id=";
   private updateUserUrl = "http://localhost/api/editcour.php?id=";
   private deleteUserUrl = "http://localhost/api/deletecour.php?id=";
-  private url = 'http://localhost/elearning/api/cour.php';
+  private url = '/api/cour.php';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl: string;
   //baseUrl:string = "http://localhost/";

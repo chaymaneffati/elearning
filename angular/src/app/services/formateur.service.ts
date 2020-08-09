@@ -12,8 +12,8 @@ const httpOptions = {
 })
 export class FormateurService {
 
-  private deleteUserUrl = "http://localhost/elearning/api/delete_user.php?id=";
-  private url = 'http://localhost/elearning/api/formateurs.php';
+  private deleteUserUrl = "/api/delete_user.php?id=";
+  private url = '/api/formateurs.php';
 
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl: string;

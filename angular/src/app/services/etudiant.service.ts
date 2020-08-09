@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class EtudiantService {
 
-  private deleteUserUrl = "http://localhost/elearning/api/delete_user.php?id=";
+  private deleteUserUrl = "/api/delete_user.php?id=";
   private url = 'http://localhost/api/etudiants.php';
 
   private headers = new HttpHeaders().set('Content-Type', 'application/json');

@@ -13,12 +13,12 @@ const httpOptions = {
 })
 export class FormationsService {
 
-  private addUserUrl= "http://localhost/elearning/api/addformation.php";
-  private getOneUserUrl = "http://localhost/elearning/api/getoneformation.php?id=";
-  private updateUserUrl = "http://localhost/elearning/api/editformation.php?id=";
-  private deleteUserUrl = "http://localhost/elearning/api/deleteformation.php?id=";
+  private addUserUrl= "/api/addformation.php";
+  private getOneUserUrl = "/api/getoneformation.php?id=";
+  private updateUserUrl = "/api/editformation.php?id=";
+  private deleteUserUrl = "/api/deleteformation.php?id=";
   
-  private url = 'http://localhost/elearning/api/formation.php';
+  private url = '/api/formation.php';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl: string;
   //baseUrl:string = "http://localhost/";

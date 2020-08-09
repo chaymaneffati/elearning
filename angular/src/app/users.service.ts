@@ -13,12 +13,12 @@ const httpOptions = {
 })
 export class UsersService {
 
-  private addUserUrl= "http://localhost/elearning/api/insert.php";
-  private getOneUserUrl = "http://localhost/elearning/api/getoneuser.php?id=";
-  private updateUserUrl = "http://localhost/elearning/api/update.php?id=";
-  private deleteUserUrl = "http://localhost/elearning/api/delete.php?id=";
-  private url = 'http://localhost/elearning/api/liste.php';
-  private login_api_endpoint = 'http://localhost/elearning/api/login.php';
+  private addUserUrl= "/api/insert.php";
+  private getOneUserUrl = "/api/getoneuser.php?id=";
+  private updateUserUrl = "/api/update.php?id=";
+  private deleteUserUrl = "/api/delete.php?id=";
+  private url = '/api/liste.php';
+  private login_api_endpoint = '/api/login.php';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl: string;
   //baseUrl:string = "http://localhost/";

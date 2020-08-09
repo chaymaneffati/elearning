@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private url = 'http://localhost/elearning/api/users.php';
+  private url = '/api/users.php';
   Users = [];
   
   private headers = new HttpHeaders().set('Content-Type', 'application/json');

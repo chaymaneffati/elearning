@@ -12,11 +12,11 @@ const httpOptions = {
 })
 export class CategoriesService {
 
-  private addUserUrl= "http://localhost/elearning/api/addcategorie.php";
-  private getOneUserUrl = "http://localhost/elearning/api/getonecategorie.php?id=";
-  private updateUserUrl = "http://localhost/elearning/api/editcategorie.php?id=";
-  private deleteUserUrl = "http://localhost/elearning/api/deletecategorie.php?id=";
-  private url = 'http://localhost/elearning/api/categorie.php';
+  private addUserUrl= "/api/addcategorie.php";
+  private getOneUserUrl = "/api/getonecategorie.php?id=";
+  private updateUserUrl = "/api/editcategorie.php?id=";
+  private deleteUserUrl = "/api/deletecategorie.php?id=";
+  private url = '/api/categorie.php';
   
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   redirectUrl: string;
